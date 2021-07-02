@@ -1,5 +1,6 @@
 from .base_page import BasePage
 from selenium.webdriver.common.by import By
+from selenium import webdriver
 from .locators import MainPageLocators
 
 class MainPage(BasePage):
@@ -14,6 +15,11 @@ class MainPage(BasePage):
         add_to_basket_button = self.browser.find_element(By.CSS_SELECTOR, "#add_to_basket_form > button")
         add_to_basket_button.click()
 
+    def correctly_book_name_in_allert_about_add_to_basket(self):
+        assert self.browser.find_element(By.XPATH, '//strong[text()="Coders at Work"]')
 
+
+
+# messages > div:nth-child(1) > div > strong
 # def should_be_login_link(self):
 #     assert self.is_element_present(*MainPageLocators.LOGIN_LINK), "Login link is not presented"
