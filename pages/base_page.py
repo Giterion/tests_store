@@ -1,7 +1,14 @@
 import webbrowser
-from selenium.common.exceptions import NoSuchElementException
+from telnetlib import EC
+
+from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.common.exceptions import NoAlertPresentException
 import math
+
+from selenium.webdriver.support.wait import WebDriverWait
+
+from pages.locators import ProductPageLocators
+
 
 class BasePage():
     def __init__(self, browser, url, timeout=10):
@@ -16,6 +23,17 @@ class BasePage():
             return False
         return True
 
+    def is_not_element_present(self, how, what, timeout=4):
+        try:
+            WebDriverWait(self.browser, timeout).until(EC.presence_of_element_located((how, what)))
+        except TimeoutException:
+            return True
+
+        return False
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message is presented, but should not be"
 
     def open(self):
         self.browser.get(self.url)
