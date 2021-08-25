@@ -1,7 +1,9 @@
-from .base_page import BasePage
+# from .base_page import BasePage
+# from selenium.webdriver.common.by import By
 from selenium.webdriver.common.by import By
-from selenium import webdriver
-from .locators import MainPageLocators
+from pages.base_page import BasePage
+from .base_page import BasePage
+
 
 class MainPage(BasePage):
     def go_to_login_page(self):
