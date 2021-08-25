@@ -1,12 +1,9 @@
-import webbrowser
 from telnetlib import EC
-from selenium.common.exceptions import TimeoutException
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import NoSuchElementException, TimeoutException
-from selenium.common.exceptions import NoAlertPresentException
 import math
+from selenium.common.exceptions import NoSuchElementException, TimeoutException
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+
 from pages.locators import ProductPageLocators
 
 
@@ -14,7 +11,7 @@ class BasePage():
     def __init__(self, browser, url, timeout=10):
         self.browser = browser
         self.url = url
-        self.browser.implicitly_wait(timeout)
+        # self.browser.implicitly_wait(timeout)
 
     def is_element_present(self, how, what):
         try:
@@ -45,7 +42,7 @@ class BasePage():
         return True
 
     def should_not_be_success_message(self):
-        assert not self.is_element_present(*ProductPageLocators.MESSAGE_PRODUCT_IN_CART), \
+        assert self.is_element_present(*ProductPageLocators.MESSAGE_PRODUCT_IN_CART), \
             "Success message is not presented"
 
     def open(self):
