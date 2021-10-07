@@ -4,6 +4,6 @@ pytest -s test_product_page.py
 
 * Should start 13 tests (1 passed, 10 skipped, 2 xfailed).
 
-pytest -s test_maine_page.py
+pytest -s test_main_page.py
 
 * Should run 2 tests (2 passed).
