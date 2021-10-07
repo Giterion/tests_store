@@ -2,8 +2,6 @@ from pages.main_page import MainPage
 from pages.locators import MainPageLocators
 from pages.locators import ProductPageLocators
 
-import time
-import pytest
 
 
 def test_guest_can_go_to_login_page(browser):
