@@ -6,4 +6,4 @@ pytest -s test_product_page.py
 
 pytest -s test_main_page.py
 
-* Should run 2 tests (2 passed).
+* Should run 3 tests (3 passed).
