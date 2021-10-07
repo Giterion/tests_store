@@ -20,6 +20,11 @@ class MainPage(BasePage):
     def correctly_book_name_in_allert_about_add_to_basket(self):
         assert self.browser.find_element(By.XPATH, '//strong[text()="Coders at Work"]')
 
+    def go_to_basket(self):
+        go_to_basket_button = self.browser.find_element(By.XPATH, '//*[@id="default"]/header/div[1]/div/div[2]/span/a')
+        go_to_basket_button.click()
+
+
 
 
 # messages > div:nth-child(1) > div > strong
