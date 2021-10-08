@@ -2,7 +2,7 @@ For run tests in terminal:
 
 pytest -s test_product_page.py
 
-* Should start 13 tests (1 passed, 10 skipped, 2 xfailed).
+* Should start 14 tests (2 passed, 10 skipped, 2 xfailed).
 
 pytest -s test_main_page.py
 
