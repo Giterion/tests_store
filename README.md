@@ -1,6 +1,6 @@
 For run tests in terminal:
 
-pytest -s test_product_page.py
+pytest -v --tb=line test_product_page.py
 
 * Should start 14 tests (2 passed, 10 skipped, 2 xfailed).
 
