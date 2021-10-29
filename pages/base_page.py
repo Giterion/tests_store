@@ -5,6 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
 from pages.locators import ProductPageLocators
+from pages.locators import BasePageLocators
 
 
 class BasePage():
@@ -63,4 +64,6 @@ class BasePage():
         except NoAlertPresentException:
             print("No second alert presented")
 
-
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
+                                                                     " probably unauthorised user"
