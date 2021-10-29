@@ -11,6 +11,10 @@ class LoginPageLocators():
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
     REGISTER_FORM = (By.CSS_SELECTOR, "#register_form")
     LOGIN_URL = (By.CSS_SELECTOR, "#login_link")
+    EMAIL_FIELD = (By.CSS_SELECTOR, "#id_registration-email")
+    PASSWORD_FIELD = (By.CSS_SELECTOR, "#id_registration-password1")
+    CONFIRM_PASSWORD_FIELD = (By.CSS_SELECTOR, "#id_registration-password2")
+    REGISTRATION_CONFIRM_BUTTON = (By.CSS_SELECTOR, "#register_form > button")
 
 class ProductPageLocators():
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages > div.alert.alert-safe.alert-noicon.alert-success.fade.in")
@@ -20,5 +24,5 @@ class ProductPageLocators():
     PRODUCT_PRICE = (By.CSS_SELECTOR, ".price_color")
     ALERT_PRODUCT_NAME = (By.CSS_SELECTOR,"div.alertinner>strong")
 
-
-
+class BasePageLocators():
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
