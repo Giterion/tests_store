@@ -23,6 +23,9 @@ class ProductPageLocators():
     PRODUCT_NAME = (By.CSS_SELECTOR, "div.col-sm-6.product_main>h1")
     PRODUCT_PRICE = (By.CSS_SELECTOR, ".price_color")
     ALERT_PRODUCT_NAME = (By.CSS_SELECTOR,"div.alertinner>strong")
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
 
 class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
     USER_ICON = (By.CSS_SELECTOR, ".icon-user")
