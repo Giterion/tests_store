@@ -3,7 +3,7 @@ import math
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-
+from selenium.common.exceptions import NoAlertPresentException
 from pages.locators import ProductPageLocators
 from pages.locators import BasePageLocators
 
