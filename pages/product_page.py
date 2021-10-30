@@ -1,5 +1,6 @@
 from .base_page import BasePage
 from .locators import ProductPageLocators
+from .locators import LoginPageLocators
 from selenium.webdriver.common.by import By
 
 
@@ -35,8 +36,12 @@ class ProductPage(BasePage):
         go_to_basket_button = self.browser.find_element(By.XPATH, '//*[@id="default"]/header/div[1]/div/div[2]/span/a')
         go_to_basket_button.click()
 
+
     def should_be_login_link(self):
         assert self.is_element_present(*ProductPageLocators.LOGIN_LINK), "Login link is not presented"
 
-
+    def should_go_to_login_link(self):
+        go_to_login_link = self.browser.find_element(*ProductPageLocators.LOGIN_LINK)
+        go_to_login_link.click()
+        assert self.is_element_present(*LoginPageLocators.LOGIN_FORM), "Not go to login link"
 
