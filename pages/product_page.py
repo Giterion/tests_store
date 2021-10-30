@@ -35,4 +35,8 @@ class ProductPage(BasePage):
         go_to_basket_button = self.browser.find_element(By.XPATH, '//*[@id="default"]/header/div[1]/div/div[2]/span/a')
         go_to_basket_button.click()
 
+    def should_be_login_link(self):
+        assert self.is_element_present(*ProductPageLocators.LOGIN_LINK), "Login link is not presented"
+
+
 
