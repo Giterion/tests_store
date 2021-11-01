@@ -8,6 +8,7 @@ from pages.locators import ProductPageLocators
 from pages.locators import BasePageLocators
 
 
+
 class BasePage():
     def __init__(self, browser, url, timeout=10):
         self.browser = browser
@@ -63,6 +64,10 @@ class BasePage():
             alert.accept()
         except NoAlertPresentException:
             print("No second alert presented")
+
+    def to_basket(self):
+        basket_button = self.browser.find_element(*BasePageLocators.BASKET_LINK)
+        basket_button.click()
 
     def should_be_authorized_user(self):
         assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
