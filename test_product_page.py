@@ -4,6 +4,7 @@ from pages.locators import MainPageLocators
 from pages.product_page import ProductPage
 from pages .base_page import BasePage
 from pages .login_page import LoginPage
+from pages .basket_page import BasketPage
 
 import time
 import pytest
@@ -72,6 +73,14 @@ def test_guest_can_go_to_login_page_from_product_page(browser):
     page = ProductPage(browser, link)
     page.open()
     page.should_go_to_login_link()
+
+def test_guest_should_not_see_basket_link_in_basket(browser):
+    link = "http://selenium1py.pythonanywhere.com/"
+    page = BasketPage(browser, link)
+    page.open()
+    time.sleep(1)
+    page.to_basket()
+    page.should_not_bee_basket_link_in_basket()
 
 class TestUserAddToBasketFromProductPage():
     @pytest.fixture(scope="function", autouse=True)
