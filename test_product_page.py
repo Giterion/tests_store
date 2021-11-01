@@ -82,6 +82,15 @@ def test_guest_should_not_see_basket_link_in_basket(browser):
     page.to_basket()
     page.should_not_bee_basket_link_in_basket()
 
+def test_guest_should_see_empty_basket_message(browser):
+    link = "http://selenium1py.pythonanywhere.com/"
+    page = BasketPage(browser, link)
+    page.open()
+    time.sleep(1)
+    page.to_basket()
+    page.basket_should_be_empty()
+
+
 class TestUserAddToBasketFromProductPage():
     @pytest.fixture(scope="function", autouse=True)
     def setup(self, browser):
@@ -111,6 +120,9 @@ class TestUserAddToBasketFromProductPage():
         #page.solve_quiz_and_get_code()
         #time.sleep(1)
         page.correctly_book_name_in_allert_about_add_to_basket()
+
+
+
 
 
 
