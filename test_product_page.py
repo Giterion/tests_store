@@ -44,7 +44,7 @@ def test_guest_cant_see_success_message(browser):
     page = MainPage(browser, link)
     page.open()
     time.sleep(3)
-    assert page.is_not_element_present(*ProductPageLocators.MESSAGE_PRODUCT_IN_CART)
+    page.no_success_message()
 
 @pytest.mark.xfail
 def test_message_disappeared_after_adding_product_to_basket(browser):
