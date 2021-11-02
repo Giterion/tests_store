@@ -28,7 +28,8 @@ class MainPage(BasePage):
     def guest_cant_see_success_message_after_adding_product_to_basket(self):
         assert self.is_not_element_present(*ProductPageLocators.MESSAGE_PRODUCT_IN_CART)
 
-
+    def no_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.MESSAGE_PRODUCT_IN_CART)
 
 
 # messages > div:nth-child(1) > div > strong
