@@ -36,7 +36,7 @@ def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
     page = MainPage(browser, link)
     page.open()
     page.can_add_product_to_basket()
-    assert page.is_not_element_present(*ProductPageLocators.MESSAGE_PRODUCT_IN_CART)
+    page.guest_cant_see_success_message_after_adding_product_to_basket()
 
 
 def test_guest_cant_see_success_message(browser):
