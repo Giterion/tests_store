@@ -3,6 +3,7 @@
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 from .base_page import BasePage
+from .locators import ProductPageLocators
 
 
 class MainPage(BasePage):
@@ -23,6 +24,9 @@ class MainPage(BasePage):
     def go_to_basket(self):
         go_to_basket_button = self.browser.find_element(By.XPATH, '//*[@id="default"]/header/div[1]/div/div[2]/span/a')
         go_to_basket_button.click()
+
+    def guest_cant_see_success_message_after_adding_product_to_basket(self):
+        assert self.is_not_element_present(*ProductPageLocators.MESSAGE_PRODUCT_IN_CART)
 
 
 
