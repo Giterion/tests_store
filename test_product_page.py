@@ -1,8 +1,5 @@
 from pages.main_page import MainPage
-from pages.locators import ProductPageLocators
-from pages.locators import MainPageLocators
 from pages.product_page import ProductPage
-from pages .base_page import BasePage
 from pages .login_page import LoginPage
 from pages .basket_page import BasketPage
 
