@@ -1,7 +1,4 @@
-# from .base_page import BasePage
-# from selenium.webdriver.common.by import By
 from selenium.webdriver.common.by import By
-from pages.base_page import BasePage
 from .base_page import BasePage
 from .locators import ProductPageLocators
 
@@ -37,6 +34,3 @@ class MainPage(BasePage):
     def should_not_be_message_product_in_cart(self):
         assert self.is_not_element_present(*ProductPageLocators.MESSAGE_PRODUCT_IN_CART)
 
-# messages > div:nth-child(1) > div > strong
-# def should_be_login_link(self):
-#     assert self.is_element_present(*MainPageLocators.LOGIN_LINK), "Login link is not presented"
