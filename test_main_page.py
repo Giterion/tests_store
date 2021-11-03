@@ -1,7 +1,5 @@
 from pages.main_page import MainPage
 from pages.login_page import LoginPage
-from pages.locators import MainPageLocators
-from pages.locators import ProductPageLocators
 
 
 
@@ -30,6 +28,5 @@ def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
     page = MainPage(browser, link)
     page.open()
     page.go_to_basket()
-    assert page.is_not_element_present(*ProductPageLocators.PRODUCT_NAME)
-    assert page.is_element_present(*MainPageLocators.YOUR_CART_IS_EMPTY)
-
+    page.should_not_be_product_name_in_basket_opened_from_main_page()
+    page.should_be_your_cart_is_empty()
