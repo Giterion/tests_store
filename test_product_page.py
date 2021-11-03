@@ -110,7 +110,7 @@ class TestUserAddToBasketFromProductPage():
         page = MainPage(browser, link)
         page.open()
         #time.sleep(1)
-        assert page.is_not_element_present(*ProductPageLocators.MESSAGE_PRODUCT_IN_CART)
+        page.should_not_be_message_product_in_cart()
 
     def test_user_can_add_product_to_basket(self, browser):
         link = 'http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/'
