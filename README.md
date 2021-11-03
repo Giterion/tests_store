@@ -1,9 +1,7 @@
-For run tests in terminal:
+Команда для запуска тестов с маркировкой need_review:
 
-pytest -v --tb=line test_product_page.py
+pytest -v --tb=line --language=en -m need_review
 
-* Should start 20 tests (8 passed, 10 skipped, 2 xfailed).
+* Тестовый проект был выполнен в PyCharm, __init__.py расположен в папке pages.
 
-pytest -s test_main_page.py
 
-* Should run 4 tests (4 passed).
