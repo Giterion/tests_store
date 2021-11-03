@@ -52,7 +52,7 @@ def test_message_disappeared_after_adding_product_to_basket(browser):
     page = MainPage(browser, link)
     page.open()
     page.can_add_product_to_basket()
-    assert page.is_disappeared(*ProductPageLocators.MESSAGE_PRODUCT_IN_CART)
+    page.message_disappeared_after_adding_product_to_basket()
 
 def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
     link = 'http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-age-of-the-pussyfoot_89/'
