@@ -94,19 +94,16 @@ class TestUserAddToBasketFromProductPage():
         link = 'http://selenium1py.pythonanywhere.com/ru/accounts/login/'
         page = LoginPage(browser, link)
         page.open()
-        #time.sleep(2)
         email = str(time.time()) + '@fakemail.org'
         password = str(time.time()) + 'S2312124ss3212d'
         page.register_new_user(email, password)
-        #time.sleep(2)
         page.should_be_authorized_user()
-        #time.sleep(2)
+
 
     def test_user_cant_see_success_message(self, browser):
         link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
         page = MainPage(browser, link)
         page.open()
-        #time.sleep(1)
         page.should_not_be_message_product_in_cart()
 
     def test_user_can_add_product_to_basket(self, browser):
@@ -114,8 +111,6 @@ class TestUserAddToBasketFromProductPage():
         page = MainPage(browser, link)
         page.open()
         page.can_add_product_to_basket()
-        #page.solve_quiz_and_get_code()
-        #time.sleep(1)
         page.correctly_book_name_in_allert_about_add_to_basket()
 
 
